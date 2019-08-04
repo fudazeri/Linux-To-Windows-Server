@@ -32,13 +32,13 @@ fi
 sudo ln -s /usr/bin/mkisofs /usr/bin/genisoimage
 # Downloading resources
 sudo mkdir /mediabots /floppy /virtio
-link1_status=$(curl -Is https://www.dropbox.com/s/eiductyclyf7kve/WinServerImageDO.gz?dl=1 | grep HTTP | cut -f2 -d" ")
+link1_status=$(curl -Is http://download686.mediafire.com/rghrgsiyc7eg/2658eaw918vdxkh/10.ENT.x64.EVAL.US-English.gz | grep HTTP | cut -f2 -d" ")
 link2_status=$(curl -Is https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://archive.org/download/WS2012R2/WS2012R2.ISO # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -P /mediabots https://www.dropbox.com/s/eiductyclyf7kve/WinServerImageDO.gz?dl=1
+	sudo wget -P /mediabots http://download686.mediafire.com/rghrgsiyc7eg/2658eaw918vdxkh/10.ENT.x64.EVAL.US-English.gz
 elif [ $link2_status = "200" -o $link2_status = "301" ] ; then 
-	sudo wget -P /mediabots https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO
+	sudo wget -P /mediabots http://download686.mediafire.com/rghrgsiyc7eg/2658eaw918vdxkh/10.ENT.x64.EVAL.US-English.gz
 else
 	echo -e "${RED}[Error]${NC} ${YELLOW}Sorry! None of Windows OS image urls are available , please report about this issue on Github page : ${NC}https://github.com/mediabots/Linux-to-Windows-with-QEMU"
 	echo "Exiting.."
