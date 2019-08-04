@@ -29,7 +29,7 @@ elif [ $dist = "Ubuntu" -o $dist = "Debian" ] ; then
 	sudo apt-get update
 	sudo apt-get install -y qemu-kvm
 fi
-sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
+sudo ln -s /usr/bin/mkisofs /usr/bin/genisoimage
 # Downloading resources
 sudo mkdir /mediabots /floppy /virtio
 link1_status=$(curl -Is https://www.dropbox.com/s/eiductyclyf7kve/WinServerImageDO.gz?dl=1 | grep HTTP | cut -f2 -d" ")
